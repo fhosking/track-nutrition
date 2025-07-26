@@ -2,6 +2,12 @@ import streamlit as st
 from supabase import create_client, Client
 import os
 
+# DEBUG: Print secrets and environment variables
+st.write("DEBUG: st.secrets SUPABASE_URL:", st.secrets.get("SUPABASE_URL", "NOT FOUND"))
+st.write("DEBUG: st.secrets SUPABASE_KEY:", st.secrets.get("SUPABASE_KEY", "NOT FOUND"))
+st.write("DEBUG: os.environ SUPABASE_URL:", os.getenv("SUPABASE_URL", "NOT FOUND"))
+st.write("DEBUG: os.environ SUPABASE_KEY:", os.getenv("SUPABASE_KEY", "NOT FOUND"))
+
 # Set your Supabase URL and anon key here or use Streamlit secrets
 SUPABASE_URL = st.secrets["SUPABASE_URL"] if "SUPABASE_URL" in st.secrets else os.getenv("SUPABASE_URL")
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"] if "SUPABASE_KEY" in st.secrets else os.getenv("SUPABASE_KEY")
