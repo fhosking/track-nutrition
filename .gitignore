@@ -1,0 +1,4 @@
+# Ignore secrets and cache
+secrets.toml
+__pycache__/
+*.pyc
